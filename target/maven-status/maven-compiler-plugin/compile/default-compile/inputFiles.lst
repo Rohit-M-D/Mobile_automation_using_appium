@@ -1,0 +1,15 @@
+/Users/rohit/Desktop/Project/Mobile-Automation/src/main/java/Datman/TestUtils/ExtentReportNG.java
+/Users/rohit/Desktop/Project/Mobile-Automation/src/main/java/Datman/TestUtils/Listeners.java
+/Users/rohit/Desktop/Project/Mobile-Automation/src/main/java/Datman/TestUtils/WaitUtils.java
+/Users/rohit/Desktop/Project/Mobile-Automation/src/main/java/Datman/base/BasePage.java
+/Users/rohit/Desktop/Project/Mobile-Automation/src/main/java/Datman/base/WebLaunchTest.java
+/Users/rohit/Desktop/Project/Mobile-Automation/src/main/java/Datman/pages/DashboardPage.java
+/Users/rohit/Desktop/Project/Mobile-Automation/src/main/java/Datman/pages/LoginPage.java
+/Users/rohit/Desktop/Project/Mobile-Automation/src/main/java/Datman/pages/UpdateBankPage.java
+/Users/rohit/Desktop/Project/Mobile-Automation/src/main/java/Datman/pages/UploadDocumentPage.java
+/Users/rohit/Desktop/Project/Mobile-Automation/src/main/java/Datman/pages/WithdrawPage.java
+/Users/rohit/Desktop/Project/Mobile-Automation/src/main/java/Datman/senarios/BankDetailsUpdateSenario.java
+/Users/rohit/Desktop/Project/Mobile-Automation/src/main/java/Datman/senarios/DashboardSenario.java
+/Users/rohit/Desktop/Project/Mobile-Automation/src/main/java/Datman/senarios/DocumentUploadSenario.java
+/Users/rohit/Desktop/Project/Mobile-Automation/src/main/java/Datman/senarios/LoginSenario.java
+/Users/rohit/Desktop/Project/Mobile-Automation/src/main/java/Datman/senarios/WithdrawSenario.java

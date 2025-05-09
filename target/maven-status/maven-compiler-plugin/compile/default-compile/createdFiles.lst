@@ -1,0 +1,15 @@
+Datman/senarios/LoginSenario.class
+Datman/pages/WithdrawPage.class
+Datman/TestUtils/Listeners.class
+Datman/pages/LoginPage.class
+Datman/base/WebLaunchTest.class
+Datman/TestUtils/ExtentReportNG.class
+Datman/pages/UpdateBankPage.class
+Datman/senarios/DashboardSenario.class
+Datman/pages/UploadDocumentPage.class
+Datman/base/BasePage.class
+Datman/TestUtils/WaitUtils.class
+Datman/pages/DashboardPage.class
+Datman/senarios/DocumentUploadSenario.class
+Datman/senarios/WithdrawSenario.class
+Datman/senarios/BankDetailsUpdateSenario.class
