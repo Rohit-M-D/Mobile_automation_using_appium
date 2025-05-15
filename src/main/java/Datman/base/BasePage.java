@@ -65,11 +65,29 @@ public class BasePage extends WebLaunchTest {
     }
     
 
-    public boolean isButtonClickable(By locator) {
+    public boolean isButtonSlected(By locator) {
         try {
             WebElement button = WaitUtils.waitForVisibility(driver, locator);
             
             if ( button.isSelected()) {
+                System.out.println("Button is clickable.");
+                return true;
+            }
+             else {
+                System.out.println("Button is not clickable, please enter required details.");
+                return false;
+            }
+        } catch (Exception e) {
+            System.out.println("Button is not clickable. Exception: " + e.getMessage());
+            return false;
+        }
+    }
+
+    public boolean isButtonEnabled(By locator) {
+        try {
+            WebElement button = WaitUtils.waitForVisibility(driver, locator);
+            
+            if ( button.isEnabled()) {
                 System.out.println("Button is clickable.");
                 return true;
             }

@@ -11,6 +11,7 @@ import Datman.TestUtils.Listeners;
 public class WithdrawPage extends BasePage  {
     private final By finalWithdrawBtn = AppiumBy.xpath("//android.widget.TextView[contains(@text, 'Withdraw £')]");
     private final By balance = AppiumBy.xpath("(//android.widget.TextView[contains(@text, '£')])[1]");
+    private final By lastTransaction = AppiumBy.xpath("(//android.widget.TextView[contains(@text, \"£\")])[1]");
     double avlBalance;
     String randomAmount = generateRandomDoubleString();
 
@@ -40,11 +41,19 @@ public class WithdrawPage extends BasePage  {
     
 
     public void checkWithdrawBtnDisable(){
-        boolean butttonDisabled = isButtonClickable(AppiumBy.xpath(getLocators("withdrawBtnDisabled")));
-        if(butttonDisabled){
-            Listeners.test.log(Status.PASS, "Withdraw button is disabled before entering the amount");
+        boolean butttonDisabled = isButtonEnabled(AppiumBy.androidUIAutomator(getLocators("withdrawBtnDisabled")));
+        if(!butttonDisabled){
+            Listeners.logScreenshot(Status.PASS, "Withdraw button is disabled before entering the amount");
         } 
     }
+
+    public void checkWithdrawBtnEnable(){
+        boolean butttonDisabled = isButtonEnabled(finalWithdrawBtn);
+        if(butttonDisabled){
+            Listeners.logScreenshot(Status.INFO, "Withdraw button is enabled after entering the amount");
+        } 
+    }
+
     
     public void enterAmountToWithdraw(){
         enterText(AppiumBy.xpath(getLocators("enterWithdrawAmount")),randomAmount);
@@ -63,7 +72,7 @@ public class WithdrawPage extends BasePage  {
     }
 
     public void validateSuccessfulWithdraw(){
-        validatingTextMessage(AppiumBy.androidUIAutomator(getLocators("withdrawConform")), "Withdrawal Request Successful");
+        validatingTextMessage(AppiumBy.androidUIAutomator(getLocators("withdrawConform")), getLocators("withdrawConformAlert"));
         Listeners.test.log(Status.PASS, "Sucessful_withdraw");
 
     }
@@ -78,9 +87,11 @@ public class WithdrawPage extends BasePage  {
         System.out.println("Actual balance after withdraw: " + actualBalance);
     
         if (expectedBalance == actualBalance) {
-            Listeners.test.log(Status.PASS, "Balance updated after withdraw\"");
+            Listeners.test.log(Status.PASS, "Balance updated after withdraw. Expected: " + expectedBalance + ", Actual: " + actualBalance);
+            // Listeners.logScreenshot(Status.PASS, "Balance updated after withdraw");
         } else {
-            Listeners.test.log(Status.PASS, "Balance not updated after withdraw");
+            Listeners.test.log(Status.PASS, "Balance not updated after withdraw. Expected: " + expectedBalance + ", Actual: " + actualBalance);
+            // Listeners.logScreenshot(Status.PASS, "Balance not updated after withdraw");
         }
     }
 
@@ -94,8 +105,27 @@ public class WithdrawPage extends BasePage  {
     }
 
     public void checkAmountIsGreater(){
-        validatingTextMessage(AppiumBy.xpath(getLocators("greaterAmount")), "* Amount greater than balance");
-        Listeners.logScreenshot(Status.FAIL, "Amount_greater_than_balance");
+        validatingTextMessage(AppiumBy.xpath(getLocators("greaterAmount")), getLocators("greaterAmountAlert"));
+        Listeners.logScreenshot(Status.INFO, "Amount_greater_than_balance");
+    }
+
+    public void clickPayout(){
+        clickElement(AppiumBy.androidUIAutomator(getLocators("lastPayout")));
+    }
+
+    public void clickPendingBtn(){
+        clickElement(AppiumBy.xpath(getLocators("pending")));
+    }
+
+    public void verifyLastTransaction(){
+        double lastWithdraw = checkElegibleAmount(lastTransaction);
+        double randomAmountNo = Double.parseDouble(randomAmount);
+        if(lastWithdraw == randomAmountNo){
+            Listeners.test.log(Status.PASS, "last_transaction_successful");
+        }
+        else {
+            Listeners.test.log(Status.FAIL, "last_transaction_failed");
+        }
     }
 }
 

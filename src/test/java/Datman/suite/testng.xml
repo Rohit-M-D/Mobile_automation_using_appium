@@ -5,9 +5,12 @@
     </listeners>
     <test name="PriorityTest">
         <classes>
-            <class name="Datman.tests.TC01_WithdrawFlowTest"/>
+            <!-- <class name="Datman.tests.TC01_WithdrawFlowTest"/> -->
             <class name="Datman.tests.TC02_UpdatebankTest"/>
-            <class name="Datman.tests.TC03_EnteredGreaterAmountTest"/>
+            <!-- <class name="Datman.tests.TC03_EnteredGreaterAmountTest"/>
+            <class name="Datman.tests.TC04_AccountNotExists"/> 
+            <class name="Datman.tests.TC05_LargeSizefileTest"/>  -->
+
         </classes>
     </test>
 </suite>

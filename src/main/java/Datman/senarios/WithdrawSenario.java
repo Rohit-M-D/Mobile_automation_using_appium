@@ -11,6 +11,7 @@ public class WithdrawSenario {
         wp.clickWithdrawBtn();
         wp.checkWithdrawBtnDisable();
         wp.enterAmountToWithdraw();
+        wp.checkWithdrawBtnEnable();
         wp.clickFinalWithdrawBtn();
         wp.clickConformPopup();
         wp.validateSuccessfulWithdraw();
@@ -22,11 +23,11 @@ public class WithdrawSenario {
         wp.clickWithdrawBtn();
         wp.checkWithdrawBtnDisable();
         wp.enterAmountToWithdraw();
+        wp.checkWithdrawBtnEnable();
         wp.clickFinalWithdrawBtn();
         wp.clickConformPopup();
         wp.validateSuccessfulWithdraw();
         wp.validateAvailableBalanceAfterWithdraw();
-
     }
 
     public void withdrawProcessWithGreaterAmount() {
@@ -36,6 +37,20 @@ public class WithdrawSenario {
         wp.checkWithdrawBtnDisable();
         wp.enterGreaterAmount();
         wp.checkAmountIsGreater();
-
+    }
+    public void withdrawProcessWithPayout() {
+        wp.validateAvailableBalance();
+        wp.validateMerchantStatus();
+        wp.clickWithdrawBtn();
+        wp.checkWithdrawBtnDisable();
+        wp.enterAmountToWithdraw();
+        wp.checkWithdrawBtnEnable();
+        wp.clickFinalWithdrawBtn();
+        wp.clickConformPopup();
+        wp.validateSuccessfulWithdraw();
+        wp.validateAvailableBalanceAfterWithdraw();
+        wp.clickPayout();
+        wp.clickPendingBtn();
+        wp.verifyLastTransaction();
     }
 }

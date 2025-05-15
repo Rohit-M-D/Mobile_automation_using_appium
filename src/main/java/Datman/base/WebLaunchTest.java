@@ -8,6 +8,9 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
+
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -36,8 +39,13 @@ public class WebLaunchTest extends ExtentReportNG {
         options.setPlatformVersion("15.0");
         options.setPlatformName("Android");
         options.setApp("/Users/rohit/Downloads/app-datman-release_ws1.apk");
-        driver = new AndroidDriver(new URI("http://127.0.0.1:4723").toURL(), options);
-
+        // driver = new AndroidDriver(new URI("http://127.0.0.1:4723").toURL(), options);
+        try {
+            driver = new AndroidDriver(new URI("http://127.0.0.1:4723").toURL(), options);
+        } catch (Exception e) {
+            System.err.println("Appium driver launch failed: " + e.getMessage());
+            throw new RuntimeException(e);
+        }
 
         // This is for implicit wait that will be Applied globally to all element searches.
         // driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
@@ -52,7 +60,8 @@ public class WebLaunchTest extends ExtentReportNG {
     public static String getScreenshotPath(String testcaseName) throws IOException {
         TakesScreenshot ts =  WebLaunchTest.driver;
         File source = ts.getScreenshotAs(OutputType.FILE);
-        String relativePath = "screenshots/" + testcaseName + ".png";
+        String timestamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date(0));
+        String relativePath = "screenshots/" + testcaseName + "_" + timestamp + ".png";
         String destinationPath = System.getProperty("user.dir") + "/reports/" + relativePath;
 
         // Create screenshots directory if it doesn't exist

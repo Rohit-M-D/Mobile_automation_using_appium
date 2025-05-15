@@ -2,3 +2,6 @@
 /Users/rohit/Desktop/Project/Mobile-Automation/src/test/java/Datman/tests/TC01_WithdrawFlowTest.java
 /Users/rohit/Desktop/Project/Mobile-Automation/src/test/java/Datman/tests/TC02_UpdatebankTest.java
 /Users/rohit/Desktop/Project/Mobile-Automation/src/test/java/Datman/tests/TC03_EnteredGreaterAmountTest.java
+/Users/rohit/Desktop/Project/Mobile-Automation/src/test/java/Datman/tests/TC04_AccountNotExists.java
+/Users/rohit/Desktop/Project/Mobile-Automation/src/test/java/Datman/tests/TC05_LargeSizefileTest.java
+/Users/rohit/Desktop/Project/Mobile-Automation/src/test/java/Datman/tests/TC06_PayoutTest.java
