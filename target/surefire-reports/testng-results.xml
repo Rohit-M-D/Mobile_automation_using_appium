@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-05-15T13:04:31 IST" name="PrioritySuite" finished-at="2025-05-15T13:05:48 IST" duration-ms="76454">
+    <groups>
+    </groups>
+    <test started-at="2025-05-15T13:04:31 IST" name="PriorityTest" finished-at="2025-05-15T13:05:48 IST" duration-ms="76454">
+      <class name="Datman.tests.TC02_UpdatebankTest">
+        <test-method is-config="true" signature="setUpReport()[pri:0, instance:Datman.tests.TC02_UpdatebankTest@7b4c50bc]" started-at="2025-05-15T13:04:31 IST" name="setUpReport" finished-at="2025-05-15T13:04:31 IST" duration-ms="3" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpReport -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Datman.tests.TC02_UpdatebankTest@7b4c50bc]" started-at="2025-05-15T13:04:31 IST" name="setUp" finished-at="2025-05-15T13:04:34 IST" duration-ms="2905" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="tC02_UpdatebankTest()[pri:0, instance:Datman.tests.TC02_UpdatebankTest@7b4c50bc]" started-at="2025-05-15T13:04:34 IST" name="tC02_UpdatebankTest" finished-at="2025-05-15T13:05:43 IST" duration-ms="69046" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tC02_UpdatebankTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Datman.tests.TC02_UpdatebankTest@7b4c50bc]" started-at="2025-05-15T13:05:44 IST" name="tearDown" finished-at="2025-05-15T13:05:48 IST" duration-ms="4299" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- Datman.tests.TC02_UpdatebankTest -->
+    </test> <!-- PriorityTest -->
+  </suite> <!-- PrioritySuite -->
+</testng-results>
